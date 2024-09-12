@@ -6,12 +6,14 @@ public class StringSwapping {
         String s1 = " Khan";
         String s2 = " Abdullah";
 
-        System.out.println("Initial String  : "+ s1 + s2);
+        System.out.println("Initial String  before swapping  s1 : "+ s1);
+        System.out.println("Initial String  before swapping  s2 : " + s2);
+        s1 = s1 + s2;
+        s2 = s1.replaceAll(s2,"");
+        s1 = s1.replaceAll(s2,"");
 
-        s1 = s1.replaceAll(s1,s2);
-        s2 = s2.replaceAll(s2,s1);
-
-        System.out.println("After replacing Strings becomes : "+s1 + s2);
+        System.out.println("After Swapping String s1 becomes s1 : " + s1);
+        System.out.println("After Swapping String s2 becomes s2 :  " + s2);
 
     }
 }
