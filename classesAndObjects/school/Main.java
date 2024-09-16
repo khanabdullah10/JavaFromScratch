@@ -1,14 +1,14 @@
-package classesAndObjects.school;
+package src.classesAndObjects.school;
 
 import java.util.*;
 
 class School {
 
-    private List<Student> students;
+    private List<classesAndObjects.school.Student> students;
 
-    private List<Teacher> teachers;
+    private List<classesAndObjects.school.Teacher> teachers;
 
-    private List<SchoolClass> classes;
+    private List<classesAndObjects.school.SchoolClass> classes;
 
     public School() {
 
@@ -22,7 +22,7 @@ class School {
 
     // Method to add a student
 
-    public void addStudent(Student student) {
+    public void addStudent(classesAndObjects.school.Student student) {
        students.add(student);
         System.out.println("Added student: " + student.getName());
 
@@ -40,7 +40,7 @@ class School {
 
 
 
-    public void addTeacher(Teacher teacher) {
+    public void addTeacher(classesAndObjects.school.Teacher teacher) {
 
         teachers.add(teacher);
 
@@ -60,7 +60,7 @@ class School {
 
 
 
-    public void createClass(SchoolClass schoolClass) {
+    public void createClass(classesAndObjects.school.SchoolClass schoolClass) {
 
         classes.add(schoolClass);
 
@@ -134,21 +134,21 @@ public class Main {
 
 
 
-        Student student1 = new Student("Alice");
+        classesAndObjects.school.Student student1 = new classesAndObjects.school.Student("Alice");
 
-        Student student2 = new Student("Bob");
-
-
-
-        Teacher teacher1 = new Teacher("Mr. Smith");
-
-        Teacher teacher2 = new Teacher("Ms. Johnson");
+        classesAndObjects.school.Student student2 = new classesAndObjects.school.Student("Bob");
 
 
 
-        SchoolClass class1 = new SchoolClass("Mathematics");
+        classesAndObjects.school.Teacher teacher1 = new classesAndObjects.school.Teacher("Mr. Smith");
 
-        SchoolClass class2 = new SchoolClass("History");
+        classesAndObjects.school.Teacher teacher2 = new classesAndObjects.school.Teacher("Ms. Johnson");
+
+
+
+        classesAndObjects.school.SchoolClass class1 = new classesAndObjects.school.SchoolClass("Mathematics");
+
+        classesAndObjects.school.SchoolClass class2 = new classesAndObjects.school.SchoolClass("History");
 
 
 

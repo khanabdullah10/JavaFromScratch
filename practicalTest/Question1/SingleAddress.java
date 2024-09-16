@@ -1,21 +1,32 @@
 package src.practicalTest.Question1;
 
-import java.util.ArrayList;
+import java.util.Objects;
 
 public class SingleAddress {
-
-
-    private String firstName;
     private String lastName;
+    private String firstName;
     private String streetAddress;
     private String city;
     private String country;
-    private int postalCode;
+    private String postalCode;
 
-    public ArrayList<SingleAddress> singleAddress;
+    // Constructor
+    public SingleAddress(String firstName, String lastName, String streetAddress, String city, String country, String postalCode) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.country = country;
+        this.postalCode = postalCode;
+    }
 
-    public SingleAddress() {
-        singleAddress = new ArrayList<>();
+    // Getters and setters
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -24,14 +35,6 @@ public class SingleAddress {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getStreetAddress() {
@@ -58,18 +61,31 @@ public class SingleAddress {
         this.country = country;
     }
 
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
+//     Override equals and hashCode to compare objects based on firstName and lastName
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SingleAddress that = (SingleAddress) o;
+        return Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName);
+    }
+
+    // Optional: Override toString to provide better print format
     @Override
     public String toString() {
-        return "SingleAddress{" +
-                "singleAddress : " + singleAddress +
-                '}';
+        return firstName + " " + lastName + ", " + streetAddress + ", " + city + ", " + country + " - " + postalCode;
     }
 }
