@@ -1,7 +1,16 @@
-package src.practicalTest.Question1;
+package src.practicalTest.question1;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
+/* This is a fully concrete class that implements AddressBookInterface
+This class contains one private data member i.e., list and one public constructor to initialize the list
+This class implements all the abstract methods from the interface and defines its own functionality
+This class contains one listAllAddress() to iterate the list and print the list of address */
+
+
+
 
 public class AddressBookImpl implements AddressBook {
     private List<SingleAddress> addresses;

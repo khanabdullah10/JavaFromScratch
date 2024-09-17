@@ -1,6 +1,13 @@
-package src.practicalTest.Question1;
+package src.practicalTest.question1;
 
 import java.util.Objects;
+
+
+
+/* This class has 6 private Data Members, 12 Members Function (Public Setters & Public getters)
+ 1 Parameterized constructor to initialize value for instance variable and
+ 3 Override method for equal(),hashcode() and toString() */
+
 
 public class SingleAddress {
     private String lastName;
@@ -10,7 +17,7 @@ public class SingleAddress {
     private String country;
     private String postalCode;
 
-    // Constructor
+    // Parameterized Constructor
     public SingleAddress(String firstName, String lastName, String streetAddress, String city, String country, String postalCode) {
         this.firstName = firstName;
         this.lastName = lastName;

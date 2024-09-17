@@ -1,4 +1,4 @@
-package src.practicalTest.Question1;
+package src.practicalTest.question1;
 
 // Exception for handling cases when an address is not found
 public class AddressNotFoundException extends Exception {

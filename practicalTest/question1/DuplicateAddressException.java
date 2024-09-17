@@ -1,4 +1,4 @@
-package src.practicalTest.Question1;
+package src.practicalTest.question1;
 
 // Exception for handling duplicate address entries
 public class DuplicateAddressException extends Exception {

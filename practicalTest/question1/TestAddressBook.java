@@ -1,13 +1,18 @@
-package src.practicalTest.Question1;
+package src.practicalTest.question1;
 
 import java.util.Scanner;
 
+/* This is a Driver's code class that contains the main method
+where the test cases are put into the class to perform action as instructed */
+
 public class TestAddressBook {
+
     public static void main(String[] args) {
         AddressBookImpl addressBook = new AddressBookImpl();
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
+//        loop will execute until the exit value becomes true
         while (!exit) {
             System.out.println("\n------------------------------------------- : Welcome User : -------------------------------");
             System.out.println("Press (1) -> Add Address");
@@ -62,6 +67,8 @@ public class TestAddressBook {
                     } catch (AddressNotFoundException e) {
                         System.out.println();
                         System.out.println(" Error : " + e.getMessage());
+                        System.out.println();
+                        System.out.println("Do you want to create a new address than press 1 !");
                     }
                     break;
 
