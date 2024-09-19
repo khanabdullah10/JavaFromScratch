@@ -1,4 +1,4 @@
-package src.collectionFrameWork.arrayList.practiceQuestion;
+package src.collectionFrameWork.arrayListExercise;
 
 
 //8. Write a Java program to sort a given array list.

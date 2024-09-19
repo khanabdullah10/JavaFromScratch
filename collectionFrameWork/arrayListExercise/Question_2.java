@@ -1,4 +1,4 @@
-package src.collectionFrameWork.arrayList.practiceQuestion;
+package src.collectionFrameWork.arrayListExercise;
 
 
 //2. Write a Java program to iterate through all elements in an array list.
