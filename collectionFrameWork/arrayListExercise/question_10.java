@@ -1,4 +1,4 @@
-package src.collectionFrameWork.arrayList.practiceQuestion;
+package src.collectionFrameWork.arrayListExercise;
 
 
 import java.util.ArrayList;

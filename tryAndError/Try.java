@@ -5,6 +5,33 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+interface Hello{
+    
+}
+abstract class Hey{
+
+
+
+//    static int sum(){
+//        return 1;
+//    }
+
+
+//     int sum(int a , int b){
+//        return a + b;
+//    }
+
+
+    //    Hey(){}
+//    public Hey(){}
+//    protected Hey(){
+//
+//    }
+//    private Hey(){}
+
+}
+
 class Student{
 
     int id;
