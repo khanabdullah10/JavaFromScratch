@@ -1,7 +1,7 @@
 package src.onlineShoppingPlatform;
 
 import src.onlineShoppingPlatform.customException.OutOfStockException;
-
+import java.util.List;
 import java.util.ArrayList;
 
 public class ShoppingCart {
@@ -15,8 +15,18 @@ public class ShoppingCart {
     }
 
     public void viewCart() {
+        if(items.isEmpty()) System.out.println("Your cart is empty.");
         System.out.println("Item in cart : ");
-        for (Product p : items) System.out.println(p.getName() + " -₹ " + p.getPrice());
+        System.out.println("=======================================");
+        for (Product p : items) System.out.println(p.getProductId()+" "+ p.getName()+" "+ p.getPrice() +" ₹/- ");
+    }
+
+    public List<Product> getItems(){
+        return items;
+    }
+
+    public void clearCart(){
+        items.clear();
     }
 
 

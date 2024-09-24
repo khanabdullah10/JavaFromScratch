@@ -7,50 +7,64 @@ import src.onlineShoppingPlatform.customException.ProductNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Inventory inventory = new Inventory();
-        Admin admin = new Admin();
-        Customer customer = new Customer();
+    public static void main(String[] args) throws PaymentFailedException {
+
+
+        Scanner sc = new Scanner(System.in);
+        Inventory inventory =  new Inventory();
+        Admin admin = new Admin(inventory);
+
+        System.out.println("***************######################################**************");
+        System.out.println("Hello Admin! please add product to keep a stock in our Inventory");
+        System.out.println("Enter Product name : ");
+        String pName = sc.nextLine();
+        System.out.println("Enter Product price : ");
+        float pPrice =sc.nextFloat();
+        System.out.println("Enter Product Id : ");
+        String pId = sc.nextLine();
+        System.out.println("Enter description for the product : ");
+        String pDesciption =sc. nextLine();
+
+
+        admin.addProductToInventory(new Product(pName,pPrice,pId,pDesciption));
 
         // Add new products to inventory by Admin
-        admin.addProductToInventory(inventory, new Product("Laptop", 35000.0, "P001"));
-        admin.addProductToInventory(inventory, new Product("Phone", 1800.0, "P002"));
-        admin.addProductToInventory(inventory, new Product("Charger", 800.0, "P003"));
-        admin.addProductToInventory(inventory, new Product("Headphone", 500.0, "P004"));
+//        admin.addProductToInventory(new Product("Laptop", 35000.0, "P001", "8GB-RAM & 256GB-SSD"));
+//        admin.addProductToInventory(new Product("Phone", 1800.0, "P002","4GB-RAM & 128GB-ROM"));
+//        admin.addProductToInventory(new Product("Charger", 800.0, "P003","Built-in Quality premium"));
+//        admin.addProductToInventory(new Product("Headphone", 500.0, "P004","Metal coating Last 40hrs"));
 
-        // Display products in inventory
+
+        System.out.println("Enter customer name ");
+        String cName = sc.nextLine();
+
+        Customer customer = new Customer(cName);
         System.out.println();
-        inventory.displayProducts();
-        System.out.println();
-        // Customer adds items to shopping cart
-        ShoppingCart cart = new ShoppingCart();
-        Scanner scanner = new Scanner(System.in);
+        inventory.showAllProducts();
+
 
 
         String productId = null;
         try {
+            System.out.println();
             System.out.println("Enter the product ID to add to cart:");
-            productId = scanner.nextLine();
-            Product product = inventory.getProductById(productId);
-            cart.addItem(product);
+            productId = sc.nextLine();
+            Product product = inventory.searchProduct(productId);
+           customer.get().addItem(product);
         } catch (ProductNotFoundException | OutOfStockException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
-        // Place an order
-        System.out.println("Choose payment method : (Credit card, Debit card, UPI ,COD)");
-        String pm = scanner.nextLine();
-        System.out.println("Choose Shipping method : (Standard, Express, Over Night)");
-        String sm = scanner.nextLine();
-        Order order = new Order(cart, productId, pm, sm);
-        try {
-            order.placeOrder();
-        } catch (PaymentFailedException e) {
-            System.out.println("Payment Error: " + e.getMessage());
-        }
+        customer.get().viewCart();
 
-        // View Order History
-        customer.placeOrder(order);
-        customer.viewOrderHistory();
+        Order order = new Order(customer);
+        order.placeOrder();
+
+        Payment.processPayment("COD",2522f);
+
+        Shipping.trackOrder();
+        sc.close();
+
+
     }
 }

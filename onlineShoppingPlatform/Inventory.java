@@ -3,28 +3,30 @@ package src.onlineShoppingPlatform;
 import src.onlineShoppingPlatform.customException.ProductNotFoundException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Inventory {
 
-    private ArrayList<Product> products = new ArrayList<>();
+    private HashMap<String,Product> products = new HashMap<>();
 
     public void addProduct(Product prod){
-        products.add(prod);
+        products.put(prod.getProductId(),prod);
     }
 
-    public Product getProductById(String productId) throws ProductNotFoundException {
-
-        for(Product prod : products){
-            if(prod.getProductId().equals(productId)) return prod;
+    public Product searchProduct(String productId)throws ProductNotFoundException{
+        if(!products.containsKey(productId)){
+            throw new ProductNotFoundException("Product with ID "+ productId + " not found.");
         }
-        throw new ProductNotFoundException("Product with ID : "+ productId + " not found.");
+        return products.get(productId);
     }
 
-    public void displayProducts() {
-        System.out.println("Available Products : ");
-        System.out.println();
-        for (Product prod: products){
-            System.out.println(prod.getName() + " -₹ " + prod.getPrice() +" ID->"+ prod.getProductId());
+    public void showAllProducts(){
+        System.out.println("Available Products:");
+        System.out.println("=======================================");
+        for(Product prod : products.values()){
+            System.out.println(prod);
         }
     }
+
+
 }

@@ -1,9 +1,10 @@
 package src.onlineShoppingPlatform;
 
 public class Shipping {
-    private static String standard;
-    private static String Express;
-    private static String Overnight;
 
+    public static void trackOrder(){
+        System.out.println("____________________________________________________");
+        System.out.println("Order is being shipped. Expected delivery in 5 days");
+    }
 
 }
