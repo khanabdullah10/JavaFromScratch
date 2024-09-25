@@ -22,7 +22,7 @@ public class Inventory {
 
     public void showAllProducts(){
         System.out.println("Available Products:");
-        System.out.println("=======================================");
+        System.out.println("============================================================================================");
         for(Product prod : products.values()){
             System.out.println(prod);
         }

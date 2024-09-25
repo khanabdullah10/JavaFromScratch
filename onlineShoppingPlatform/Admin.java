@@ -10,6 +10,6 @@ public class Admin {
 
     public void addProductToInventory(Product product){
         inventory.addProduct(product);
-        System.out.println("Admin added product: "+product.getName()+" successfully.");
+        System.out.println("[Admin added product: "+product.getName()+" successfully.]");
     }
 }
