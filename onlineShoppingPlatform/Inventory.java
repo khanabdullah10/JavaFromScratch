@@ -15,7 +15,7 @@ public class Inventory {
 
     public Product searchProduct(String productId)throws ProductNotFoundException{
         if(!products.containsKey(productId)){
-            throw new ProductNotFoundException("Product with ID "+ productId + " not found.");
+            throw new ProductNotFoundException("[Product with ID "+ productId + " not found.]");
         }
         return products.get(productId);
     }

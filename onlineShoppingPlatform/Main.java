@@ -141,64 +141,70 @@ public class Main {
 
             inventory.showAllProducts();
             System.out.println();
-            System.out.println(":::::Enter customer name::::");
+            System.out.println("      :::::Enter customer name::::");
             String cName = br.readLine();
 
             Customer customer = new Customer(cName);
 
 
+            // ...
+
             String productId = null;
-            String pID = null;
             try {
-                System.out.println();
-                System.out.println("Enter the product ID to add to cart:");
-                productId = br.readLine();
-                Product product = inventory.searchProduct(productId);
-                customer.get().addItem(product);
-                System.out.println("Do you want to add more item to your Cart than Press (+) or (-) to Check out");
-                productId = br.readLine();
-
-                if(productId .equalsIgnoreCase("-")){
-                    customer.get().viewCart();
-
-                    Order order = new Order(customer);
-                    order.placeOrder();
-
-                    System.out.println("Enter payment method :");
-                    String method = br.readLine();
-
-                    System.out.println("Your total amount = "+ pPrice );
-                    Payment.processPayment(method,pPrice);
-
-                    Shipping.trackOrder();
-                }
-                else {
-                    System.out.println("Enter the product ID to add to cart:");
+                while (true) {
+                    System.out.println();
+                    System.out.println("Enter the product ID to add to cart (<or 'done' to checkout>):");
                     productId = br.readLine();
-                    product = inventory.searchProduct(productId);
+                    if (productId.equalsIgnoreCase("done")) {
+                        break;
+                    }
+                    Product product = inventory.searchProduct(productId);
                     customer.get().addItem(product);
                 }
 
+                customer.get().viewCart();
+
+                Order order = new Order(customer);
+                order.placeOrder();
+                System.out.println();
+                System.out.println("Enter payment method :");
+                String method = br.readLine();
+
+                System.out.println("Your total amount = " + customer.get().calculateTotal());
+                Payment.processPayment(method, customer.get().calculateTotal());
+
+                Shipping.trackOrder();
             } catch (ProductNotFoundException | OutOfStockException e) {
                 System.out.println("Error: " + e.getMessage());
                 System.out.println("Enter the correct product ID again:");
-                pID = br.readLine();
-                Product product1 =inventory.searchProduct(pID);
-                customer.get().addItem(product1);
+                productId = br.readLine();
+                Product product = inventory.searchProduct(productId);
+                customer.get().addItem(product);
+                customer.get().viewCart();
 
-                //                System.exit(0);
+                Order order = new Order(customer);
+                order.placeOrder();
+                System.out.println();
+                System.out.println("Enter payment method :");
+                String method = br.readLine();
+
+                System.out.println("Your total amount = " + customer.get().calculateTotal());
+                Payment.processPayment(method, customer.get().calculateTotal());
             }
 
-            customer.get().viewCart();
+// ...
 
-            Order order = new Order(customer);
-            order.placeOrder();
-
-            System.out.println("Enter payment method :");
-            String method = br.readLine();
-
-            System.out.println("Your total amount = "+ pPrice );
-            Payment.processPayment(method,pPrice);
+//            customer.get().viewCart();
+//
+//            Order order = new Order(customer);
+//            order.placeOrder();
+//
+//            System.out.println("Enter payment method :");
+//            String method = br.readLine();
+//
+//            double totalPrice = customer.get().calculateTotal();
+//            System.out.println("Your total amount = "+ totalPrice );
+//            Payment.processPayment(method,totalPrice);
 
             Shipping.trackOrder();
 
