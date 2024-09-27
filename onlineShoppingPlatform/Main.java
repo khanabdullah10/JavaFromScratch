@@ -10,231 +10,150 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Main {
+
+    /***
+     * The main method serves as the entry point for the Online Shopping Platform application.
+     * It allows two types of users to interact with the system: Admin and Customer.
+     ***/
     public static void main(String[] args) throws PaymentFailedException, IOException, ProductNotFoundException, OutOfStockException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Scanner sc = new Scanner(System.in);
-        Inventory inventory =  new Inventory();
+        Inventory inventory = new Inventory();
         Admin admin = new Admin(inventory);
         boolean exit = false;
 
+        // Simple Login System
+        System.out.println();
+        System.out.println(":::::::::::: Welcome to the Online Shopping Platform! ::::::::::::");
+        System.out.println("Please log in:");
+        System.out.println("Press <1> for Admin Login");
+        System.out.println("Press <2> for Customer Login");
 
+        int userType = sc.nextInt();
+        sc.nextLine(); // Consume newline
 
-        while(!exit){
+        if (userType == 1) {
+            // Admin Section
+            System.out.println("Hello Admin, please authenticate:");
+            System.out.print("Enter Admin username: ");
+            String username = br.readLine();
+            System.out.print("Enter Admin password: ");
+            String password = br.readLine();
 
-            System.out.println();
-            System.out.println("***************************######################################***********************");
-            System.out.println("Hello Admin! please add product to keep a stock in our Inventory");
-            System.out.println();
-            System.out.println("Choose Item type :");
-            System.out.println("Press <1> - Electronic");
-            System.out.println("Press <2> - Clothes");
-            System.out.println("Press <3> - House Decor or Kitchen utensils");
-            System.out.println("Press <4> - Food");
-            System.out.println("Press <5> - Exit");
-            System.out.println();
-            System.out.print("------------------------------------ : Now Choose an option : ------------------------------ \n");
-            System.out.print("Enter Here ! :");
-            int choice = sc.nextInt();
-            sc.nextLine();
+            if (username.equals("admin") && password.equals("admin123")) {
+                System.out.println("Login successful! Welcome, Admin.");
 
-            String pName = null;
-            float pPrice = 0.0f;
-            String pId = null;
-            String pDescription = null;
-
-
-
-            switch (choice){
-                case 1:
-                    System.out.println("Enter Product name : ");
-                     pName = br.readLine();
-                    System.out.println("Enter Product price : ");
-                     pPrice = Float.parseFloat(br.readLine());
-                    System.out.println("Enter Product Id : ");
-                     pId = br.readLine();
-                    System.out.println("Enter description for the product : ");
-                     pDescription = br.readLine();
-                    admin.addProductToInventory(new Product("Electronic ",pName,pPrice,pId,pDescription));
+                // Admin operations
+                while (!exit) {
                     System.out.println();
+                    System.out.println("***************************######################################***********************");
+                    System.out.println("Hello Admin! Please add product to keep stock in our Inventory");
                     System.out.println();
-                    System.out.println("Do you want to add more than continue by pressing (+) or Exit by pressing (.)");
-                    String input = br.readLine();
-                    if(input.equalsIgnoreCase("+")){
-                        continue;
-                    }else if(input.equalsIgnoreCase(".")) {
-                        break;
-                    }
-
-
-                case 2:
-                    System.out.println("Enter Product name : ");
-                    pName = br.readLine();
-                    System.out.println("Enter Product price : ");
-                    pPrice = Float.parseFloat(br.readLine());
-                    System.out.println("Enter Product Id : ");
-                    pId = br.readLine();
-                    System.out.println("Enter description for the product : ");
-                    pDescription = br.readLine();
-                    admin.addProductToInventory(new Product("Clothes ",pName,pPrice,pId,pDescription));
-
-                    System.out.println("Do you want to add more than continue by pressing (+) or Exit by pressing (.)");
-                     input = br.readLine();
-                    if(input.equalsIgnoreCase("+")){
-                        continue;
-                    }else if(input.equalsIgnoreCase(".")) {
-                        break;
-                    }
-
-
-                case 3:
-                    System.out.println("Enter Product name : ");
-                    pName = br.readLine();
-                    System.out.println("Enter Product price : ");
-                    pPrice = Float.parseFloat(br.readLine());
-                    System.out.println("Enter Product Id : ");
-                    pId = br.readLine();
-                    System.out.println("Enter description for the product : ");
-                    pDescription = br.readLine();
-                    admin.addProductToInventory(new Product("House Decor Or Home Utensils ",pName,pPrice,pId,pDescription));
+                    System.out.println("Choose Item type:");
+                    System.out.println("Press <1> - Electronic");
+                    System.out.println("Press <2> - Clothes");
+                    System.out.println("Press <3> - House Decor or Kitchen utensils");
+                    System.out.println("Press <4> - Food");
+                    System.out.println("Press <5> - Done adding products and move to customer section");
                     System.out.println();
-                    System.out.println("Do you want to add more than continue by pressing (+) or Exit by pressing (.)");
-                     input = br.readLine();
-                    if(input.equalsIgnoreCase("+")){
-                        continue;
-                    }else if(input.equalsIgnoreCase(".")) {
-                        break;
+                    System.out.print("Enter option: ");
+                    int choice = sc.nextInt();
+                    sc.nextLine(); // Consume newline
+
+                    String pName = null;
+                    float pPrice = 0.0f;
+                    String pId = null;
+                    String pDescription = null;
+
+                    switch (choice) {
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                            System.out.println("Enter Product name: ");
+                            pName = br.readLine();
+                            System.out.println("Enter Product price: ");
+                            pPrice = Float.parseFloat(br.readLine());
+                            System.out.println("Enter Product Id: ");
+                            pId = br.readLine();
+                            System.out.println("Enter description for the product: ");
+                            pDescription = br.readLine();
+
+                            String category = "";
+                            switch (choice) {
+                                case 1 -> category = "Electronic";
+                                case 2 -> category = "Clothes";
+                                case 3 -> category = "House Decor Or Home Utensils";
+                                case 4 -> category = "Food";
+                            }
+
+                            admin.addProductToInventory(new Product(category, pName, pPrice, pId, pDescription));
+
+                            System.out.println("Product added successfully!");
+                            System.out.println("Do you want to add more? Continue by pressing (+) or move to Customer by pressing (.)");
+                            String input = br.readLine();
+                            if (input.equalsIgnoreCase("+")) {
+                                continue;
+                            } else if (input.equalsIgnoreCase(".")) {
+                                break; // Exit the admin loop and proceed to a customer section
+                            }
+
+                        case 5:
+                            System.out.println("Admin finished adding products. Moving to Customer section...");
+                            exit = true; // Exit the admin loop
+                            break;
+
+                        default:
+                            System.out.println("Invalid input by the Admin");
                     }
-
-
-                case 4:
-                    System.out.println("Enter Product name : ");
-                    pName = br.readLine();
-                    System.out.println("Enter Product price : ");
-                    pPrice = Float.parseFloat(br.readLine());
-                    System.out.println("Enter Product Id : ");
-                    pId = br.readLine();
-                    System.out.println("Enter description for the product : ");
-                    pDescription = br.readLine();
-                    admin.addProductToInventory(new Product("Food ",pName,pPrice,pId,pDescription));
-                    System.out.println();
-                    System.out.println("Do you want to add more than continue by pressing (+) or Exit by pressing (.)");
-                     input = br.readLine();
-                    if(input.equalsIgnoreCase("+")){
-                        continue;
-                    }else if(input.equalsIgnoreCase(".")) {
-                        break;
-                    }
-
-
-                case 5:
-                    System.out.println("Thank you for using our Service dear customer, have a Good day! :)");
-                    exit = true;
-                    System.exit(0);
-
-                default:
-                    System.out.println("Invalid input by the Admin");
-
-            }
-
-
-
-            inventory.showAllProducts();
-            System.out.println();
-            System.out.println("      :::::Enter customer name::::");
-            String cName = br.readLine();
-
-            Customer customer = new Customer(cName);
-
-
-            // ...
-
-            String productId = null;
-            try {
-                while (true) {
-                    System.out.println();
-                    System.out.println("Enter the product ID to add to cart (<or 'done' to checkout>):");
-                    productId = br.readLine();
-                    if (productId.equalsIgnoreCase("done")) {
-                        break;
-                    }
-                    Product product = inventory.searchProduct(productId);
-                    customer.get().addItem(product);
                 }
 
-                customer.get().viewCart();
-
-                Order order = new Order(customer);
-                order.placeOrder();
-                System.out.println();
-                System.out.println("Enter payment method :");
-                String method = br.readLine();
-
-                System.out.println("Your total amount = " + customer.get().calculateTotal());
-                Payment.processPayment(method, customer.get().calculateTotal());
-
-                Shipping.trackOrder();
-            } catch (ProductNotFoundException | OutOfStockException e) {
-                System.out.println("Error: " + e.getMessage());
-                System.out.println("Enter the correct product ID again:");
-                productId = br.readLine();
-                Product product = inventory.searchProduct(productId);
-                customer.get().addItem(product);
-                customer.get().viewCart();
-
-                Order order = new Order(customer);
-                order.placeOrder();
-                System.out.println();
-                System.out.println("Enter payment method :");
-                String method = br.readLine();
-
-                System.out.println("Your total amount = " + customer.get().calculateTotal());
-                Payment.processPayment(method, customer.get().calculateTotal());
+                // Reset the flag for the customer section
+                exit = false;
+            } else {
+                System.out.println("Invalid credentials, exiting the system.");
+                System.exit(0);
             }
-
-// ...
-
-//            customer.get().viewCart();
-//
-//            Order order = new Order(customer);
-//            order.placeOrder();
-//
-//            System.out.println("Enter payment method :");
-//            String method = br.readLine();
-//
-//            double totalPrice = customer.get().calculateTotal();
-//            System.out.println("Your total amount = "+ totalPrice );
-//            Payment.processPayment(method,totalPrice);
-
-            Shipping.trackOrder();
-
-
-
-
-
 
         }
 
+        // Move to Customer Section after Admin is done
+        System.out.println("Welcome, Customer!");
+        System.out.println("Enter your name:");
+        String cName = br.readLine();
+        Customer customer = new Customer(cName);
 
+        // Customer operations
+        while (!exit) {
+            inventory.showAllProducts();
+            System.out.println();
+            System.out.println("Enter the product ID to add to cart (<or 'done' to checkout>):");
+            String productId = br.readLine();
 
+            if (productId.equalsIgnoreCase("done")) {
+                customer.get().viewCart();
+                Order order = new Order(customer);
+                order.placeOrder();
 
+                System.out.println();
+                System.out.println("Enter payment method:");
+                String method = br.readLine();
 
+                System.out.println("Your total amount = " + customer.get().calculateTotal());
+                Payment.processPayment(method, customer.get().calculateTotal());
+                Shipping.trackOrder();
+                exit = true; // End the loop after placing order and payment
+            } else {
+                try {
+                    Product product = inventory.searchProduct(productId);
+                    customer.get().addItem(product);
+                } catch (ProductNotFoundException | OutOfStockException e) {
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }
+        }
 
-
-
-        // Add new products to inventory by Admin
-//        admin.addProductToInventory(new Product("Laptop", 35000.0, "P001", "8GB-RAM & 256GB-SSD"));
-//        admin.addProductToInventory(new Product("Phone", 1800.0, "P002","4GB-RAM & 128GB-ROM"));
-//        admin.addProductToInventory(new Product("Charger", 800.0, "P003","Built-in Quality premium"));
-//        admin.addProductToInventory(new Product("Headphone", 500.0, "P004","Metal coating Last 40hrs"));
-
-
-
-
-
-
-
-
-
+        System.out.println("Thank you for using our platform. Goodbye!");
     }
 }
