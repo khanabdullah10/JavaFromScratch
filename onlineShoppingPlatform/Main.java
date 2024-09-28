@@ -25,7 +25,8 @@ public class Main {
 
         // Simple Login System
         System.out.println();
-        System.out.println(":::::::::::: Welcome to the Online Shopping Platform! ::::::::::::");
+        System.out.println(":::::::::::: Welcome to the Online GEN_Z Shopping Platform! ::::::::::::");
+        System.out.println();
         System.out.println("Please log in:");
         System.out.println("Press <1> for Admin Login");
         System.out.println("Press <2> for Customer Login");

@@ -17,7 +17,7 @@ public class ShoppingCart {
      * If the product is null, an OutOfStockException is thrown.
      */
     public void addItem(Product prod) throws OutOfStockException {
-        if (prod == null) throw new OutOfStockException("The product is out of stock or unavailable.");
+        if (prod.equals(null)) throw new OutOfStockException("The product is out of stock or unavailable.");
         else items.add(prod);
         System.out.println("[Added to the Cart: " + prod.getName() + "]");
     }
@@ -44,8 +44,7 @@ public class ShoppingCart {
 
     /***
      * Returns the list of products currently in the shopping cart.
-     *
-     * @return A list of products in the cart.
+
      */
     public List<Product> getItems() {
         return items;
@@ -60,8 +59,6 @@ public class ShoppingCart {
 
     /***
      * Calculates the total price of all items in the shopping cart.
-     *
-     * @return The total price of items in the cart.
      */
     public double calculateTotal() {
         double total = 0;

@@ -24,8 +24,6 @@ public class Product {
 
     /***
      * Retrieves the name of the product.
-     *
-     * @return The name of the product.
      */
     public String getName() {
         return name;
@@ -33,8 +31,6 @@ public class Product {
 
     /***
      * Retrieves the price of the product.
-     *
-     * @return The price of the product.
      */
     public double getPrice() {
         return price;
@@ -42,8 +38,7 @@ public class Product {
 
     /***
      * Retrieves the unique identifier for the product.
-     *
-     * @return The product ID.
+
      */
     public String getProductId() {
         return productId;
@@ -51,8 +46,7 @@ public class Product {
 
     /***
      * Retrieves the type of the product.
-     *
-     * @return The type of the product.
+
      */
     public String getType() {
         return type;
@@ -60,8 +54,7 @@ public class Product {
 
     /***
      * Returns a string representation of the product, including type, name, price, product ID, and description.
-     *
-     * @return A string that represents the product.
+
      */
     @Override
     public String toString() {

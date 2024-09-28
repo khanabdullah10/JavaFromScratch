@@ -17,8 +17,6 @@ public class Inventory {
     /***
      * Adds a product to the inventory.
      * The product is stored in the HashMap with its product ID as the key.
-     *
-     * @param prod The product to be added to the inventory.
      */
     public void addProduct(Product prod) {
         products.put(prod.getProductId(), prod);
@@ -27,10 +25,6 @@ public class Inventory {
     /***
      * Searches for a product in the inventory by its product ID.
      * If the product is not found, it throws a ProductNotFoundException.
-     *
-     * @param productId The ID of the product to be searched.
-     * @return The Product object if found in the inventory.
-     * @throws ProductNotFoundException If the product with the given ID is not found in the inventory.
      */
     public Product searchProduct(String productId) throws ProductNotFoundException {
         if (!products.containsKey(productId)) {
