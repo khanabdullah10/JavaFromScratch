@@ -10,7 +10,7 @@ public class Product {
     private double price;       // Price of the product
     private String productId;   // Unique identifier for the product
     private String description;  // Description of the product
-
+    private int quantity;
     /***
      * Constructs a new Product with the specified details.
      */
@@ -59,5 +59,9 @@ public class Product {
     @Override
     public String toString() {
         return "Type: " + type + " " + name + " " + price + "₹/- " + productId + " " + description;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 }

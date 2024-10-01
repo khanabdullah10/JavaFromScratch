@@ -17,9 +17,16 @@ public class ShoppingCart {
      * If the product is null, an OutOfStockException is thrown.
      */
     public void addItem(Product prod) throws OutOfStockException {
-        if (prod.equals(null)) throw new OutOfStockException("The product is out of stock or unavailable.");
-        else items.add(prod);
-        System.out.println("[Added to the Cart: " + prod.getName() + "]");
+        if (prod == null) {
+            System.out.println("Cannot add null product to the cart.");
+            return;
+        }
+        if (prod.getQuantity() <= 0) {
+            throw new OutOfStockException("The product is out of stock or unavailable.");
+        } else {
+            items.add(prod);
+            System.out.println("[Added to the Cart: " + prod.getName() + "]");
+        }
     }
 
     /***
