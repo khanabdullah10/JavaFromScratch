@@ -1,4 +1,4 @@
-package src.predefinedInterface.supplierInterface;
+package src.java_8.predefinedInterface.supplierInterface;
 
 import java.util.function.Supplier;
 

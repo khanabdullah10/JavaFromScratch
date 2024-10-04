@@ -1,7 +1,6 @@
-package src.optionalClass;
+package src.java_8.optionalClass;
 
 import java.util.Optional;
-import java.util.function.Consumer;
 
 /*** Optional class in java is a container obj that may contain non-null value or may not
  * It help in reduces null checks and help to avoid RE:NPE

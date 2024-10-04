@@ -1,4 +1,4 @@
-package src.predefinedInterface.functionInterface;
+package src.java_8.predefinedInterface.functionInterface;
 
 import java.util.function.Function;
 

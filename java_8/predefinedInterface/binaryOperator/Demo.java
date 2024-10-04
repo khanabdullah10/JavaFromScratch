@@ -1,4 +1,4 @@
-package src.predefinedInterface.binaryOperator;
+package src.java_8.predefinedInterface.binaryOperator;
 
 
 import java.util.function.BinaryOperator;

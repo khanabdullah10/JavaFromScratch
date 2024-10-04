@@ -1,4 +1,4 @@
-package src.predefinedInterface.biFunction;
+package src.java_8.predefinedInterface.biFunction;
 
 import java.util.function.BiFunction;
 

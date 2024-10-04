@@ -1,4 +1,4 @@
-package src.predefinedInterface.biPredicate;
+package src.java_8.predefinedInterface.biPredicate;
 
 
 import java.util.function.BiFunction;

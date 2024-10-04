@@ -1,4 +1,4 @@
-package src.predefinedInterface.predicateInterface;
+package src.java_8.predefinedInterface.predicateInterface;
 
 
 import java.util.function.Predicate;

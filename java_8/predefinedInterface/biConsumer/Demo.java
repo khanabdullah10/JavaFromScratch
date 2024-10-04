@@ -1,4 +1,4 @@
-package src.predefinedInterface.biConsumer;
+package src.java_8.predefinedInterface.biConsumer;
 
 import java.util.function.BiConsumer;
 

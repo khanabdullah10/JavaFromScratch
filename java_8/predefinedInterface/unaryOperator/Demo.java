@@ -1,4 +1,4 @@
-package src.predefinedInterface.unaryOperator;
+package src.java_8.predefinedInterface.unaryOperator;
 
 
 import java.util.function.UnaryOperator;
