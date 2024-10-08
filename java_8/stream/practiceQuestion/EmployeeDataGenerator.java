@@ -1,5 +1,6 @@
 package src.java_8.stream.practiceQuestion;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.*;
 
@@ -197,37 +198,115 @@ public class EmployeeDataGenerator {
                 System.out.println("Gender : "+k + " and Count : "+v);
             });
 
-            
+            /**
+             *
+             * Calculate the total salary of all
+             * female employees in a list of `Employee` objects using Java 8 Streams.
+             */
+
+            List<Employee> emp = EmployeeDataGenerator.generateSampleData();
+
+            Optional<Double> totalSalary = emp.stream().filter(e->"Female".equalsIgnoreCase(e.getGender())).map(e->e.getSalary()).reduce((a, b)->a+b).get().describeConstable();
+            System.out.println(totalSalary);
+
+
+            /**
+             * Find the female employee with the highest salary in a list of `Employee`
+             * objects using Java 8 Streams.
+             */
+
+            Employee empp = emp.stream().filter(e->"Female".equalsIgnoreCase(e.getGender())).sorted(Comparator.comparing(Employee::getSalary).reversed()).findFirst().get();
+            System.out.println(empp);
+
+
+            /***
+             * Create a list of names (Strings) from a list of `Employee` objects using Java 8 Streams.
+             */
+
+            List<String> name = emp.stream().map(e->e.getName()).collect(Collectors.toList());
+            System.out.println(name);
+
+            /**
+             * Create a list of employees’ names who have a salary
+             * greater than 20,000 and are in the “Sales” department using Java 8 Streams.
+             */
+
+            List<String> emppp = emp.stream().filter(e-> e.getSalary() > 20000 && e.getDepartment().equalsIgnoreCase("Sales")).map(e->e.getName()).collect(Collectors.toUnmodifiableList());
+            System.out.println(emppp);
+
+
+            /**
+             * Calculate the average salary for all employees and print it.
+             */
+
+            Double sal = emp.stream().mapToDouble(e->e.getSalary()).average().getAsDouble();
+            System.out.println(sal);
+
+
+            /***
+             * Calculate the average salary for employees in each department using Java 8 Streams.
+             */
+
+            Map<String , Double> emz = emp.stream().collect(Collectors.groupingBy(e->e.getDepartment(),Collectors.averagingDouble(e->e.getSalary())));
+            emz.forEach((k,v)-> System.out.println(k+" "+v));
+
+
+            /***
+             * Increase the salary of all
+             * female employees in the “Engineering” department by 10% using Java 8 Streams.
+             */
+
+
+           List<Double>  feSal = emp.stream().filter(e->e.getGender().equalsIgnoreCase("Female") && e.getDepartment().equalsIgnoreCase("Engineering")).map(s->s.getSalary()+(s.getSalary()*10)/100).collect(Collectors.toUnmodifiableList());
+            feSal.forEach(e-> System.out.println(e));
+
+            /**
+             * Filter and retrieve all employees who are older than 30 years and have a
+             * salary greater than 30,000 using Java 8 Streams.
+             */
+
+            List<String > empname = emp.stream().filter(e->e.getAge()>30 && e.getSalary() > 30000).map(e->e.getName()).collect(Collectors.toUnmodifiableList());
+            empname.forEach(System.out::println);
+
+
+            /**
+             * Find the employee with the highest salary in each department using Java 8 Streams.
+             */
+
+            Map<String, Employee> highestSalaryInEachDepartment = emp.stream()
+                    .collect(Collectors.toMap(
+                            Employee::getDepartment,
+                            e -> e,
+                            (e1, e2) -> e1.getSalary() >= e2.getSalary() ? e1 : e2
+                    ));
+
+            System.out.println(highestSalaryInEachDepartment);
+
+
+            /**
+             * Calculate the total salary, average salary, and number
+             * of female employees in each department using Java 8 Streams.
+             */
+
+            Optional<String> numOFEmp = emp.stream().filter(e->e.getName().equalsIgnoreCase("Female")).map(e->e.getName()).reduce((a, b)->a+b);
+            System.out.println(numOFEmp);
+
+
+            /***
+             * Determine and print the number of years each employee
+             * has been with the company using the ChronoUnit class.
+             */
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    List<Employee> employeeeList = EmployeeDataGenerator.generateSampleData();
+//
+//                    employeeeList.stream()
+//                            .forEach(employee -> {
+//                                long years = ChronoUnit.YEARS.between(employee.getHireDate(), LocalDate.now());
+//                                System.out.println(employee.getName() + " has been with the company for " + years + " years.");
+//                            });
 
 
 
