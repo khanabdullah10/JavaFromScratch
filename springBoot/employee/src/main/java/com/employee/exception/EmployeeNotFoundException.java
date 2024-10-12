@@ -1,9 +1,0 @@
-package com.employee.exception;
-
-import org.springframework.web.bind.annotation.ExceptionHandler;
-
-public class EmployeeNotFoundException extends RuntimeException{
-    public EmployeeNotFoundException(String msg){
-        super(msg);
-    }
-}
