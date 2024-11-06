@@ -7,7 +7,7 @@ public class Employee {
     private String city;
     private double salary;
 
-    // Getters and Setters
+
     public int getEmpId() {
         return empId;
     }

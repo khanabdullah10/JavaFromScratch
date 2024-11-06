@@ -8,7 +8,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = "com.example") // Ensure it scans your base package
+@ComponentScan(basePackages = "com.example")
 public class JdbcConfig {
 
     @Bean
