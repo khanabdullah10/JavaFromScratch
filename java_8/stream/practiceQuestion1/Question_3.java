@@ -15,6 +15,8 @@ public class Question_3 {
 
         List<Integer> l = Arrays.asList(1,2,3,45,6);
         Optional<Integer> nl = l.stream().max(Integer::compareTo);
+        Optional<Integer> nll = l.stream().min(Integer::compareTo);
         System.out.println(nl.get());
+        System.out.println(nll.get());
     }
 }
