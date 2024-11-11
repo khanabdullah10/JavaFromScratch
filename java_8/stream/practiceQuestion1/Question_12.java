@@ -1,4 +1,4 @@
-package src.java_8.stream.practiceQuestion1;
+package java_8.stream.practiceQuestion1;
 
 import java.util.Arrays;
 import java.util.List;
