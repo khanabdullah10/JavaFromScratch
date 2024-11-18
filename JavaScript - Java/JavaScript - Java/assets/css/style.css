@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: antiquewhite;
+  display: flex;
+}
+header ul {
+  list-style-type: none;
+}
+header ul li {
+  display: inline-block;
+}
+header .left-header {
+  flex: 50%;
+}
+header .right-header {
+  flex: 50%;
+  text-align: right;
+}
+header ul li {
+  padding: 10px;
+  transition: 2s all;
+}
+
+header ul li:hover {
+    background-color: black;
+}
+header ul li:hover a , header ul li:hover i{
+    color: aliceblue;
+}
+
+/* to change the color of anchor tag */
+header ul li a {
+  color: black;
+}
+
+/* Media Query */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  header {
+    flex-direction: column;
+  }
+  header ul li {
+    display: block;
+  }
+  header .right-header {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+}
