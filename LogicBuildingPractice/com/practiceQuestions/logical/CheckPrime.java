@@ -31,11 +31,12 @@ class Person{
 }
 
 public class CheckPrime {
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 
 //        int b = 6;
 //
 //        IntStream.rangeClosed(1,(int)Math.sqrt(b)).noneMatch(i-> b)
 
-    }
+
+    
 }
