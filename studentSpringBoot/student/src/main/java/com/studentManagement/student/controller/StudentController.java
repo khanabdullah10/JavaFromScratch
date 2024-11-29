@@ -2,7 +2,6 @@ package com.studentManagement.student.controller;
 import com.studentManagement.student.entity.Student;
 import com.studentManagement.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,21 +9,20 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/students")
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
 
     // Add Student
-    @PostMapping
-    public ResponseEntity<Student> addStudent(@RequestBody Student student) {
+    @PostMapping("/add")
+    public ResponseEntity<String> addStudent(@RequestBody Student student) {
         Student addedStudent = studentService.addStudent(student);
-        return ResponseEntity.status(201).body(addedStudent); // 201 Created
+        return ResponseEntity.status(201).body("Student added Successfully"); // 201 Created
     }
 
     // Get All Students
-    @GetMapping
+    @GetMapping("/view")
     public ResponseEntity<List<Student>> getAllStudents() {
         List<Student> students = studentService.getAllStudents();
         if (students.isEmpty()) {
@@ -62,8 +60,8 @@ public class StudentController {
 
     // Delete Student by ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteStudent(@PathVariable("id") Integer studentId) {
+    public ResponseEntity<String> deleteStudent(@PathVariable("id") Integer studentId) {
         studentService.deleteStudentById(studentId);
-        return ResponseEntity.noContent().build(); // 204 No Content
+        return ResponseEntity.ok("Deleted successfully"); // 204 No Content
     }
 }

@@ -75,7 +75,7 @@ public class StudentService {
             List<Student> students = studentRepository.findAll();
             for (Student student : students) {
                 if (student.getCgpa() == 10) {
-                    student.setCourseFees(student.getCourseFees() / 2);
+                    student.setCourse_fees(student.getCourse_fees() / 2);
                     studentRepository.save(student);
                 }
             }

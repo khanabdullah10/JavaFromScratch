@@ -11,11 +11,13 @@ import lombok.Data;
 public class Student {
 
     @Id
-    private Integer studentId;
-    private String studentName;
+
+    private int studentId;
+
+    private String studentname;
     private String address;
     private String city;
     private Double cgpa;
-    private Double courseFees;
+    private Double course_fees;
 
 }
