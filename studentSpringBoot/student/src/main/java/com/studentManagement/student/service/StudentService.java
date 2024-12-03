@@ -21,12 +21,11 @@ public class StudentService {
     public Student addStudent(Student student) {
         try {
             return studentRepository.save(student);
-        } catch (ApplicationException e) {
-            throw new ApplicationException("Failed to add student due to database integrity violation: " + e.getMessage());
         } catch (Exception e) {
             throw new ApplicationException("Failed to add student: " + e.getMessage());
         }
     }
+
 
     // Get all students with exception handling
     public List<Student> getAllStudents() {
@@ -49,8 +48,6 @@ public class StudentService {
                 throw new ApplicationException("Student with ID " + studentId + " not found.");
             }
             return student;
-        } catch (ApplicationException e) {
-            throw e; // Re-throw the custom exception
         } catch (Exception e) {
             throw new ApplicationException("Failed to retrieve student: " + e.getMessage());
         }

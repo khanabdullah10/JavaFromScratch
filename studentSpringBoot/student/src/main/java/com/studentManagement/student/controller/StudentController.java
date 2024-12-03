@@ -1,11 +1,15 @@
 package com.studentManagement.student.controller;
 import com.studentManagement.student.entity.Student;
+import com.studentManagement.student.exception.ApplicationException;
 import com.studentManagement.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -17,9 +21,16 @@ public class StudentController {
     // Add Student
     @PostMapping("/add")
     public ResponseEntity<String> addStudent(@RequestBody Student student) {
-        Student addedStudent = studentService.addStudent(student);
-        return ResponseEntity.status(201).body("Student added Successfully"); // 201 Created
+        try {
+            studentService.addStudent(student);
+            return ResponseEntity.status(201).body("Student added Successfully");
+        } catch (ApplicationException ex) {
+            // Catch the exception and send a custom error message
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Failed to add student"); // Specific message for adding student failure
+        }
     }
+
 
     // Get All Students
     @GetMapping("/view")
@@ -33,11 +44,32 @@ public class StudentController {
 
     // Get Student by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudentById(@PathVariable("id") Integer studentId) {
-        Optional<Student> student = studentService.getStudentById(studentId);
-        return student.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build()); // 404 Not Found
+    public ResponseEntity<?> getStudentById(@PathVariable("id") Integer studentId) {
+        try {
+            // Try to find the student by ID
+            Optional<Student> student = studentService.getStudentById(studentId);
+
+            // Case 1: No student found (return 404 with message)
+            if (student.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("Student not found");  // Ensure the message is included
+            }
+
+            // Case 2: If student found, return 200 OK with student data
+            return ResponseEntity.ok(student.get());
+
+        } catch (ApplicationException ex) {
+            // Case 3: Any unexpected error should return a 500 error with an appropriate message
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("error", "Failed to retrieve student: " + ex.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(errorResponse); // Ensure error message is returned
+        }
     }
+
+
+
+
 
     // Get Students by City and CGPA
     @GetMapping("/city-cgpa")
@@ -64,4 +96,15 @@ public class StudentController {
         studentService.deleteStudentById(studentId);
         return ResponseEntity.ok("Deleted successfully"); // 204 No Content
     }
+
+    @ExceptionHandler(ApplicationException.class)
+    public ResponseEntity<String> handleApplicationException(ApplicationException ex) {
+        String errorMessage = "Failed to retrieve student: " + ex.getMessage();
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", errorMessage);  // Return as JSON
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse.toString());
+    }
+
+
+
 }
