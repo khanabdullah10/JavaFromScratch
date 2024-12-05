@@ -1,10 +1,8 @@
 package com.shoppingApplication.genZ.service;
 
 import com.shoppingApplication.genZ.model.Product;
-import com.shoppingApplication.genZ.repository.ProductRepository;
+import com.shoppingApplication.genZ.repositoryTest.ProductRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 

@@ -95,6 +95,17 @@
 						</goals>
 					</execution>
 				</executions>
+
+				<configuration>
+					<!-- Exclude packages or classes -->
+					<excludes>
+<!--						<exclude>**/com/shoppingApplication/genZ/repository/**</exclude>  &lt;!&ndash; Exclude the generated package &ndash;&gt;-->
+						<exclude>**com/shoppingApplication/genZ/exception/**</exclude>
+						<exclude>**com/shoppingApplication/genZ/model/**</exclude><!-- Exclude specific packages -->
+					</excludes>
+				</configuration>
+
+
 			</plugin>
 
 

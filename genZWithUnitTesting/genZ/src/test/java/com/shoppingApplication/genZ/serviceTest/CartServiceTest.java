@@ -3,8 +3,8 @@ package com.shoppingApplication.genZ.serviceTest;
 import com.shoppingApplication.genZ.exception.ApplicationException;
 import com.shoppingApplication.genZ.model.Cart;
 import com.shoppingApplication.genZ.model.Product;
-import com.shoppingApplication.genZ.repository.CartRepository;
-import com.shoppingApplication.genZ.repository.ProductRepository;
+import com.shoppingApplication.genZ.repositoryTest.CartRepository;
+import com.shoppingApplication.genZ.repositoryTest.ProductRepository;
 import com.shoppingApplication.genZ.service.CartService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,11 +12,9 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,9 +33,12 @@ public class CartServiceTest {
 
     private Product mockProduct;
 
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+
+
 
         // Setup a mock product with 10 units available in stock
         mockProduct = new Product(1, "Product1", "Description", BigDecimal.valueOf(100.0), 10);
@@ -69,6 +70,11 @@ public class CartServiceTest {
         assertEquals(cartDto.getQuantity(), savedCart.getQuantity());
     }
 
+
+
+
+
+
     @Test
     void testAddToCart_ExceedsStock() {
         // Creating a Cart item where the quantity exceeds available stock
@@ -81,6 +87,10 @@ public class CartServiceTest {
         ApplicationException exception = assertThrows(ApplicationException.class, () -> cartService.addToCart(cartDto));
         assertEquals("Requested quantity exceeds available stock", exception.getMessage());
     }
+
+
+
+
 
     @Test
     void testAddToCart_UpdateExistingItem() {

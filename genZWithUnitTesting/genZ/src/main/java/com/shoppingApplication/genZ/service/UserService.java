@@ -4,7 +4,7 @@ package com.shoppingApplication.genZ.service;
 
 
 import com.shoppingApplication.genZ.model.User;
-import com.shoppingApplication.genZ.repository.UserRepository;
+import com.shoppingApplication.genZ.repositoryTest.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.shoppingApplication.genZ.serviceTest;
 import com.shoppingApplication.genZ.model.User;
-import com.shoppingApplication.genZ.repository.UserRepository;
+import com.shoppingApplication.genZ.repositoryTest.UserRepository;
 import com.shoppingApplication.genZ.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -3,8 +3,8 @@ package com.shoppingApplication.genZ.service;
 import com.shoppingApplication.genZ.exception.ApplicationException;
 import com.shoppingApplication.genZ.model.Cart;
 import com.shoppingApplication.genZ.model.Product;
-import com.shoppingApplication.genZ.repository.CartRepository;
-import com.shoppingApplication.genZ.repository.ProductRepository;
+import com.shoppingApplication.genZ.repositoryTest.CartRepository;
+import com.shoppingApplication.genZ.repositoryTest.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

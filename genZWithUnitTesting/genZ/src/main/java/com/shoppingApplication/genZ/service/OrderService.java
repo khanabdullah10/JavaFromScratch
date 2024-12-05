@@ -2,10 +2,10 @@ package com.shoppingApplication.genZ.service;
 
 import com.shoppingApplication.genZ.exception.ApplicationException;
 import com.shoppingApplication.genZ.model.*;
-import com.shoppingApplication.genZ.repository.CartRepository;
-import com.shoppingApplication.genZ.repository.OrderRepository;
-import com.shoppingApplication.genZ.repository.ProductRepository;
-import com.shoppingApplication.genZ.repository.ShippingRepository;
+import com.shoppingApplication.genZ.repositoryTest.CartRepository;
+import com.shoppingApplication.genZ.repositoryTest.OrderRepository;
+import com.shoppingApplication.genZ.repositoryTest.ProductRepository;
+import com.shoppingApplication.genZ.repositoryTest.ShippingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
