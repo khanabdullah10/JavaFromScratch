@@ -1,0 +1,102 @@
+++++Logging++++
+===================
+
+Logging is an essential aspect of application development that allows developers to monitor and troubleshoot their application.
+
+Spring Boot supports various of logging frame work
+some of the common framework are as follows...
+
+1)Logback (Majorly used)
+** default framework used in SB which offers flexible and simple configuration 
+
+2)LogSLF4j (simple logging facade for JAVA)
+** also known as asynchronous logging 
+** Abstarction Above Logback
+
+3)Java util logging (JUL)
+
+To customize your own logging configuration
+you can create .xml /.properties /.yaml inside resources 
+
+ A log consist severity which are as follows:
+1)Timestamp
+2)Logging levels 
+3)Process ID
+4)Thread
+5)StackTrace
+6)Message
+
+How can we find out logging level 
+Through its severity
+
+Common levels
+==============
+to enable this 
+logging:
+  level:
+    packageName:
+       subPackgeName: DEBUG/TRACE
+* TRACE
+* DEBUG
+BY DEFAULT ENABLED....
+* INFO
+* WARN
+* ERROR
+
+To inject logger instance in your class Spring Boot provide annotations like @SLF4J & @LOG4J2
+
+Manually injecting.....
+private static final Logger log = LoggerFactory.getLogger(className);
+//// @SLF4J which reduce common logic
+
+
+To disable logs
+================
+logging:
+  level:
+    root : OFF
+
+similary can do for particular package and Class
+
+
+
+Lgback.xml
+===========
+Loggs can be print in two ways	
+appender fileAppender and ConsoleAppender
+
+
+
+<configuration>
+
+    <appender name = "myConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg %n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name = "myFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>
+            journalApp.log
+        </file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>journalApp-%d{yy-MM-dd_HH-mm}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>
+                %d{yy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg %n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="myConsoleAppender" />
+        <appender-ref ref="myFileAppender" />
+    </root>
+
+
+</configuration>
