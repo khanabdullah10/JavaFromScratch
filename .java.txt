@@ -1,0 +1,9 @@
+  List < Product > productsList = new ArrayList < Product > ();
+        // Adding Products
+        productsList.add(new Product(1, "HP Laptop", 25000 f));
+        productsList.add(new Product(2, "Dell Laptop", 30000 f));
+        productsList.add(new Product(3, "Lenevo Laptop", 28000 f));
+        productsList.add(new Product(4, "Sony Laptop", 28000 f));
+        productsList.add(new Product(5, "Apple Laptop", 90000 f));
+        // This is more compact approach for filtering data
+        productsList.stream().filter(product -> product.getPrice() == 30000)
