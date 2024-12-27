@@ -18,7 +18,10 @@ public class CountOcurrencesOfA_String {
 
     public static void main(String[] args) {
 
-        System.out.println(count("khanAbdullah",'a'));
+//        System.out.println(count("khanAbdullah",'a'));
+        String s1 = "Hello";
+        String s2 = "Hel" + "lo";
+        System.out.println(s1 == s2);
 
     }
 }
