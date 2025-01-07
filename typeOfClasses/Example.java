@@ -1,4 +1,4 @@
-package typesOfClasses;
+package com.important.typeOfClasses;
 
 //Concrete class OR Regular class: - Fully implementation class that can be access without any barrier!
 class Car{
@@ -71,37 +71,37 @@ interface Shape{
 
 //The Special type of class used to defined collection of constants
 //All fields inside the enum class is by default static and final
- enum Day{
-     MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY
+enum Day{
+    MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY
+}
+
+class Test{
+    Day day;
+
+    Test(Day day){
+        this.day = day;
+    }
+
+    public void brief(){
+        switch(day){
+
+            case MONDAY :
+                System.out.println("Monday is bad");
+                break;
+            case FRIDAY:
+                System.out.println("Friday is better");
+                break;
+            case SUNDAY: case SATURDAY:
+                System.out.println("Weekends are good");
+                break;
+            default:
+                System.out.println("Boring day");
+
+
         }
+    }
 
- class Test{
-      Day day;
-
-      Test(Day day){
-          this.day = day;
-      }
-
-      public void brief(){
-          switch(day){
-
-              case MONDAY :
-                  System.out.println("Monday is bad");
-                  break;
-              case FRIDAY:
-                  System.out.println("Friday is better");
-                  break;
-              case SUNDAY: case SATURDAY:
-                  System.out.println("Weekends are good");
-                  break;
-              default:
-                  System.out.println("Boring day");
-
-
-          }
-      }
-
- }
+}
 
 
 // Inner_Class :- Class defined within another class called as nested class
@@ -136,7 +136,7 @@ class OuterClass{
         System.out.println("Accesing the inner field "+ inner.innerField );
     }
 
- }
+}
 
 // Method Local inner class
 class Out{
