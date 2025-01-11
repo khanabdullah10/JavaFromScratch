@@ -1,0 +1,222 @@
+======================
++++ Logic Building +++
+======================
+
+*********************
+=====================
+Beginner Level (1-60)
+=====================
+
+Print "Hello, World!"
+Write a program to check if a number is positive, negative, or zero.
+Write a program to check if a number is even or odd.
+Write a program to find the largest of three numbers.
+Write a program to find the smallest of three numbers.
+Write a program to check whether a number is divisible by 5 or not.
+Write a program to check whether a year is a leap year or not.
+Print the Fibonacci series up to a given number.
+Write a program to reverse a number.
+Write a program to check if a number is prime or not.
+Write a program to find the factorial of a number.
+Find the sum of digits of a given number.
+Write a program to count the number of vowels in a string.
+Write a program to count the number of words in a string.
+Write a program to convert a number to its binary equivalent.
+Write a program to count the occurrences of a specific character in a string.
+Write a program to find the largest digit in a given number.
+Write a program to check if a string is a palindrome.
+
+Write a program to remove vowels from a string.
+Write a program to concatenate two strings.
+Write a program to find the length of a string without using built-in functions.
+Write a program to find the second largest number in an array.
+Write a program to find the average of an array of numbers.
+Write a program to print all prime numbers up to a given number.
+Write a program to check if a string is a palindrome without using the reverse function.
+Write a program to implement a simple calculator (addition, subtraction, multiplication, division).
+Write a program to find the GCD (Greatest Common Divisor) of two numbers.
+Write a program to find the LCM (Least Common Multiple) of two numbers.
+Write a program to print the first n Fibonacci numbers.
+Write a program to find the sum of numbers from 1 to n.
+Write a program to find the reverse of a string without using the reverse() method.
+Write a program to convert a given string to uppercase.
+Write a program to convert a given string to lowercase.
+Write a program to find the sum of all elements in an array.
+Write a program to remove all spaces from a string.
+Write a program to find the common elements between two arrays.
+Write a program to merge two arrays.
+Write a program to find the maximum and minimum in an array.
+Write a program to calculate the power of a number.
+Write a program to check whether a number is an Armstrong number.
+Write a program to generate a multiplication table for a given number.
+Write a program to find the duplicate elements in an array.
+Write a program to find the factorial of a number using recursion.
+Write a program to find the nth Fibonacci number using recursion.
+Write a program to find the sum of an array using recursion.
+Write a program to reverse an array using recursion.
+Write a program to check whether a given number is a perfect number.
+Write a program to generate the first 10 square numbers.
+Write a program to find the largest number in an array using a for loop.
+Write a program to find the smallest number in an array using a for loop.
+Write a program to implement binary search on an array.
+Write a program to sort an array in ascending order.
+Write a program to sort an array in descending order.
+Write a program to check if a number is a palindrome.
+Write a program to find the second smallest number in an array.
+Write a program to find the duplicate characters in a string.
+Write a program to check whether a string is an anagram of another string.
+Write a program to find the intersection of two arrays.
+Write a program to remove duplicates from an array.
+
+===========================
+Intermediate Level (61-140)
+===========================
+
+Write a program to implement a basic ATM system.
+Write a program to check if a number is a perfect square.
+Write a program to implement a simple shopping cart system.
+Write a program to calculate compound interest.
+Write a program to calculate simple interest.
+Write a program to simulate a bank account with deposit and withdrawal functions.
+Write a program to implement a circular linked list.
+Write a program to implement a doubly linked list.
+Write a program to perform matrix multiplication.
+Write a program to check if a number is a strong number.
+Write a program to implement bubble sort.
+Write a program to implement selection sort.
+Write a program to implement insertion sort.
+Write a program to find the longest palindrome substring in a string.
+Write a program to find the largest prime number in a given range.
+Write a program to solve the Tower of Hanoi problem.
+Write a program to implement a stack using arrays.
+Write a program to implement a queue using arrays.
+Write a program to implement binary search tree (BST).
+Write a program to perform in-order traversal of a binary tree.
+Write a program to perform pre-order traversal of a binary tree.
+Write a program to perform post-order traversal of a binary tree.
+Write a program to find the height of a binary tree.
+Write a program to count the number of nodes in a binary tree.
+Write a program to check if a binary tree is balanced.
+Write a program to implement quicksort.
+Write a program to implement merge sort.
+Write a program to find the nth smallest element in an unsorted array.
+Write a program to reverse a linked list.
+Write a program to detect a cycle in a linked list.
+Write a program to check if a linked list is a palindrome.
+Write a program to implement a priority queue.
+Write a program to convert a decimal number to hexadecimal.
+Write a program to convert a binary number to decimal.
+Write a program to implement a basic calculator using a switch case.
+Write a program to find the largest sum contiguous subarray.
+Write a program to implement a heap data structure.
+Write a program to find the Kth largest element in an array.
+Write a program to find the common elements in multiple arrays.
+Write a program to implement breadth-first search (BFS) in a graph.
+Write a program to implement depth-first search (DFS) in a graph.
+Write a program to implement Kruskal's algorithm for Minimum Spanning Tree.
+Write a program to implement Dijkstra's algorithm for shortest path.
+Write a program to check if two strings are anagrams using sorting.
+Write a program to count the number of bits set in a binary number.
+Write a program to find the longest common subsequence between two strings.
+Write a program to find the longest common prefix of a string array.
+Write a program to implement depth-first search (DFS) using recursion.
+Write a program to solve the N-Queens problem using backtracking.
+Write a program to implement a hash table.
+Write a program to check if a number is a power of 2.
+Write a program to find the intersection of two linked lists.
+Write a program to convert a number into its Roman numeral representation.
+Write a program to print all permutations of a string.
+Write a program to find the first non-repeating character in a string.
+Write a program to remove all adjacent duplicates from a string.
+Write a program to implement a Trie (prefix tree).
+Write a program to find the most frequent character in a string.
+Write a program to implement a Bloom filter.
+Write a program to find the shortest path in an unweighted graph using BFS.
+Write a program to solve the Knapsack problem using dynamic programming.
+Write a program to find the maximum product of two integers in an array.
+Write a program to implement a deque (double-ended queue).
+Write a program to check if a string has balanced parentheses.
+Write a program to find the median of two sorted arrays.
+Write a program to find the longest increasing subsequence in an array.
+Write a program to find the intersection of two sorted arrays.
+Write a program to merge two sorted arrays.
+Write a program to check if a number is a palindrome without using extra space.
+Write a program to perform heap sort.
+Write a program to implement depth-first search (DFS) iteratively.
+Write a program to find the Kth smallest element in an unsorted array using quickselect.
+Write a program to solve the subset sum problem.
+Write a program to find the longest substring without repeating characters.
+Write a program to find the first repeating character in a string.
+Write a program to check if two strings are anagrams using hash maps.
+Write a program to implement a balanced binary search tree (AVL Tree).
+Write a program to find the longest sequence of consecutive numbers in an array.
+Write a program to count the number of trailing zeros in a factorial.
+Write a program to perform a binary search on a rotated sorted array.
+
+========================
+Advanced Level (141-200)
+========================
+
+Write a program to implement an LRU (Least Recently Used) cache.
+Write a program to perform matrix exponentiation.
+Write a program to implement a segment tree.
+Write a program to implement a disjoint-set (Union-Find) data structure.
+Write a program to implement a graph using adjacency list and adjacency matrix.
+Write a program to implement topological sorting of a directed acyclic graph (DAG).
+Write a program to implement Floyd-Warshall algorithm for all-pairs shortest path.
+Write a program to solve the traveling salesman problem using dynamic programming.
+Write a program to implement a suffix tree.
+Write a program to solve the coin change problem using dynamic programming.
+Write a program to implement the KMP (Knuth-Morris-Pratt) string matching algorithm.
+Write a program to implement the Rabin-Karp algorithm for string matching.
+Write a program to implement the A (A-star) pathfinding algorithm.*
+Write a program to implement a Fibonacci heap.
+Write a program to implement a red-black tree.
+Write a program to implement the Bellman-Ford algorithm for shortest path.
+Write a program to implement a self-balancing binary search tree (Splay Tree).
+Write a program to implement a Bloom filter with multiple hash functions.
+Write a program to find the longest palindromic subsequence.
+Write a program to find the maximum flow in a flow network using Ford-Fulkerson.
+Write a program to find the optimal strategy for the game of Nim.
+Write a program to solve the subset sum problem using a backtracking approach.
+Write a program to implement a concurrent thread-safe stack using Java.
+Write a program to implement an event-driven simulation (like a traffic light simulation).
+Write a program to solve the longest common subsequence problem using dynamic programming.
+Write a program to perform integer factorization using the Pollard-Rho algorithm.
+Write a program to solve the matrix chain multiplication problem.
+Write a program to solve the subset product problem.
+Write a program to implement the Boyer-Moore algorithm for string matching.
+Write a program to implement the Ford-Fulkerson algorithm for the maximum flow problem.
+Write a program to solve the knapsack problem using the branch and bound method.
+Write a program to implement the knapsack problem with fractional items (greedy approach).
+Write a program to calculate the binomial coefficient using Pascal's triangle.
+Write a program to implement a Trie with autocomplete functionality.
+Write a program to implement a persistent data structure (immutable linked list).
+Write a program to implement a top-k frequent elements algorithm.
+Write a program to implement the strassen matrix multiplication algorithm.
+Write a program to solve the 0/1 knapsack problem using dynamic programming.
+Write a program to implement the naive Bayes classifier in Java.
+Write a program to implement a multi-threaded application with thread pooling.
+Write a program to perform multi-dimensional dynamic programming (e.g., shortest path in 2D grid).
+Write a program to implement a bloom filter with false positive rate analysis.
+Write a program to implement the Huffman coding algorithm for data compression.
+Write a program to implement a recursive backtracking solution to a Sudoku solver.
+Write a program to simulate a network of connected devices.
+Write a program to implement a custom garbage collection algorithm.
+Write a program to implement a simple RESTful API using Java (Spring Boot).
+Write a program to solve the longest increasing subsequence problem using dynamic programming.
+Write a program to generate all possible valid parentheses combinations.
+Write a program to solve the word ladder problem using BFS.
+Write a program to implement the Knuth-Morris-Pratt pattern matching algorithm.
+Write a program to perform database query optimization using indexes in Java.
+Write a program to implement a rate limiter using a sliding window algorithm.
+Write a program to simulate the banker's algorithm for deadlock detection.
+Write a program to implement a distributed system in Java using RMI (Remote Method Invocation).
+Write a program to simulate a multithreaded chat application.
+Write a program to implement a custom event-driven framework.
+Write a program to implement a file system abstraction.
+Write a program to solve the maximum subarray sum problem using divide and conquer.
+Write a program to simulate the MapReduce framework in Java.
+
+======================================================================================================================================================================
+These questions cover a wide range of problems and concepts in Java, from basic syntax and simple algorithms to more advanced topics like data structures, algorithms, and system design.
