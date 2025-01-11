@@ -15,7 +15,7 @@ public class FibonacciSeries {
 //            second = next;
 //        }
         System.out.print(first + " " + second + " ");
-        while (count < n){
+        while (count <=n){
             int next = first + second;
             System.out.print(next + " ");
             first = second;
@@ -27,7 +27,7 @@ public class FibonacciSeries {
 
 
     public static void main(String[] args) {
-        printFib(20);
+        printFib(10);
     }
 
 }
